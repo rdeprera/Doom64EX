@@ -1,4 +1,4 @@
-Doom64EX [![Build Status](https://travis-ci.org/svkaiser/Doom64EX.svg?branch=master)](https://travis-ci.org/svkaiser/Doom64EX) [![Build status](https://ci.appveyor.com/api/projects/status/04kswu014uwrljrd/branch/master?svg=true)](https://ci.appveyor.com/project/dotfloat/doom64ex/branch/master)
+Doom64EX [![Build Status](https://api.travis-ci.org/rdeprera/Doom64EX.svg?branch=master)](https://travis-ci.org/rdeprera/Doom64EX)
 ========
 
 Doom64EX is a reverse-engineering project aimed to recreate Doom64 as close as
@@ -35,14 +35,14 @@ packages are prefixed with `mingw-w64-i686-` and `mingw-w64-x86_64-` for 32-bit
 and 64-bit packages, respectively.
 
 \** FluidSynth is optional.
-The [fluidsynth-lite](https://github.com/dotfloat/fluidsynth-lite) fork can be
+The [fluidsynth-lite](https://github.com/EtherTyper/fluidsynth-lite) fork can be
 used instead.
 
 Note: You may also need to install dynamic libraries separately.
 
 ## Using the system-provided FluidSynth library
 
-Doom64EX uses [fluidsynth-lite](https://github.com/dotfloat/fluidsynth-lite) to
+Doom64EX uses [fluidsynth-lite](https://github.com/EtherTyper/fluidsynth-lite) to
 reduce the number of dependencies. If you wish to use FluidSynth as provided by
 your package-manager, add `-DENABLE_SYSTEM_FLUIDSYNTH=ON` as a cmake argument.
 
@@ -84,7 +84,7 @@ On Arch Linux:
 Find a suitable place to build the program and navigate there using `cd`.
 
     $ # Clone this repository (if you haven't done so already)
-    $ git clone https://github.com/svkaiser/Doom64EX --recursive
+    $ git clone https://github.com/rdeprera/Doom64EX.git --recursive
     $ cd Doom64EX
 
     $ # If you have previously cloned the repository, you'll need to also grab the fluidsynth-lite submodule
@@ -106,7 +106,7 @@ need to create the `doom64ex.pk3` file manually.
 Download and install [CMAKE](https://cmake.org/download/). Follow the instructions on
 the website and make sure to update the system. Clone the repository in a suitable place to build the program.
 
-Next, download the [Win32 Dependencies](https://github.com/svkaiser/Doom64EX/releases/download/win32dep-2018-04-11/Doom64EX-deps-win32-2018-04-11.zip). Extract the archive into the `extern` directory. Also remember to clone [fluidsynth-lite](https://github.com/dotfloat/fluidsynth-lite) and generate the `.lib` and `.dll` files. Place these in `extern\lib` and `extern\bin`, respectively.
+Next, download the [Win32 Dependencies](https://github.com/svkaiser/Doom64EX/releases/download/win32dep-2018-04-11/Doom64EX-deps-win32-2018-04-11.zip). Extract the archive into the `extern` directory. Also remember to clone [fluidsynth-lite](https://github.com/EtherTyper/fluidsynth-lite) and generate the `.lib` and `.dll` files. Place these in `extern\lib` and `extern\bin`, respectively.
 
 Next, generate the MSVC project files.
 
