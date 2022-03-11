@@ -1,4 +1,4 @@
-Doom64EX [![Build Status](https://api.travis-ci.org/rdeprera/Doom64EX.svg?branch=master)](https://travis-ci.org/rdeprera/Doom64EX)
+Doom64EX [![Build Status](https://app.travis-ci.com/rdeprera/Doom64EX.svg?branch=master)](https://app.travis-ci.com/rdeprera/Doom64EX)
 ========
 
 Doom64EX is a reverse-engineering project aimed to recreate Doom64 as close as
