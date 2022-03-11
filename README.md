@@ -7,18 +7,18 @@ possible with additional modding features.
 **NOTICE 2nd February 2017** The supplementary data file `kex.wad` has been
 renamed to `doom64ex.pk3`.
 
-# Installing
+## Installing
 
 At the moment there are no official binary builds. You can find older
 versions [here](https://doom64ex.wordpress.com/downloads/).
 
-# Compiling
+## Compiling
 
 It's possible to compile Doom64EX yourself. Officially, only Linux, Windows and
 macOS are supported. Patches for alternative operating system are gladly
 accepted, however.
 
-## Dependencies
+### Dependencies
 
 |                                                      | Ubuntu 14.04      | Fedora 24        | Arch Linux / [MSYS2*](http://www.msys2.org/) on Windows | [Homebrew](http://brew.sh/) on macOS        |
 |------------------------------------------------------|-------------------|------------------|---------------------------------------------------------|---------------------------------------------|
@@ -40,19 +40,44 @@ used instead.
 
 Note: You may also need to install dynamic libraries separately.
 
-## Using the system-provided FluidSynth library
+### CMake options (-D parameter)
 
-Doom64EX uses [fluidsynth-lite](https://github.com/EtherTyper/fluidsynth-lite) to
-reduce the number of dependencies. If you wish to use FluidSynth as provided by
-your package-manager, add `-DENABLE_SYSTEM_FLUIDSYNTH=ON` as a cmake argument.
+| default | option/parameter | description |
+| ------- | ---------------- | ----------- |
+| ON | `ENABLE_TESTING` | *Compile unit tests* |
+| OFF | `ENABLE_SYSTEM_FLUIDSYNTH` | *Link with system-wide fluidsynth and not fluidsynth-lite* |
+| ON | `ENABLE_GTK3` | *Display windows using GTK+3* |
+| ON | `VERSION_DEV` | *Add git commit hash to window title* |
 
-    $ cmake -DENABLE_SYSTEM_FLUIDSYNTH=ON ..
+### CMake examples
 
-## Compiling on Linux
+A common no-dev and tunning setup for compiling is `cmake -DENABLE_SYSTEM_FLUIDSYNTH=ON -DVERSION_DEV=OFF -DENABLE_TESTING=OFF ..`
+
+- Using the system-provided **FluidSynth library** (default OFF)  
+    > Doom64EX uses [fluidsynth-lite](https://github.com/EtherTyper/fluidsynth-lite) to
+    reduce the number of dependencies. If you wish to use FluidSynth as provided by
+    your package-manager, add `-DENABLE_SYSTEM_FLUIDSYNTH=ON` as a cmake argument.
+    ```console
+    user@linux:~$ cmake -DENABLE_SYSTEM_FLUIDSYNTH=ON ..
+    ```
+- Using the **GTK3** for windows (default OFF)
+    ```console
+    user@linux:~$ cmake -DENABLE_GTK3=ON ..
+    ```
+- Without **Unit Tests** (default ON)
+    ```console
+    user@linux:~$ cmake -DENABLE_TESTING=OFF ..
+    ```
+- Without **Git Commit Hash** (version) on window title (default ON)
+    ```console
+    user@linux:~$ cmake -DVERSION_DEV=OFF ..
+    ```
+
+### On Linux
 
 All of these steps are done using the terminal.
 
-### Prepare the Dependencies
+#### Prepare the Dependencies
 
 On Ubuntu:
 
@@ -79,7 +104,7 @@ On Arch Linux:
     $ # Install dependencies
     $ sudo pacman -S git gcc cmake sdl2 sdl2_net zlib libpng
 
-### Clone and Build
+#### Clone and Build
 
 Find a suitable place to build the program and navigate there using `cd`.
 
@@ -92,7 +117,7 @@ Find a suitable place to build the program and navigate there using `cd`.
     
     $ mkdir build       # Create a build directory within the git repo
     $ cd build          # Change into the new directory
-    $ cmake ..          # Generate Makefiles
+    $ cmake ..          # Generate Makefiles without options (parameter -D) - default setup
     $ make              # Build everything
     $ sudo make install # Install Doom64EX to /usr/local
     
@@ -106,7 +131,7 @@ need to create the `doom64ex.pk3` file manually.
 Download and install [CMAKE](https://cmake.org/download/). Follow the instructions on
 the website and make sure to update the system. Clone the repository in a suitable place to build the program.
 
-Next, download the [Win32 Dependencies](https://github.com/svkaiser/Doom64EX/releases/download/win32dep-2018-04-11/Doom64EX-deps-win32-2018-04-11.zip). Extract the archive into the `extern` directory. Also remember to clone [fluidsynth-lite](https://github.com/EtherTyper/fluidsynth-lite) and generate the `.lib` and `.dll` files. Place these in `extern\lib` and `extern\bin`, respectively.
+Next, download the [Win32 Dependencies](https://github.com/rdeprera/Doom64EX/releases/download/win32dep-2018-04-11/Doom64EX-deps-win32-2018-04-11.zip). Extract the archive into the `extern` directory. Also remember to clone [fluidsynth-lite](https://github.com/EtherTyper/fluidsynth-lite) and generate the `.lib` and `.dll` files. Place these in `extern\lib` and `extern\bin`, respectively.
 
 Next, generate the MSVC project files.
 
@@ -130,7 +155,7 @@ Open `Terminal.app` (or a terminal replacement).
 Find a suitable place to build the program and navigate there using terminal.
 
     $ # Clone this repository (if you haven't done so already)
-    $ git clone https://github.com/svkaiser/Doom64EX --recursive
+    $ git clone https://github.com/rdeprera/Doom64EX --recursive
 
     $ # If you have previously cloned the repository, you'll need to also grab the fluidsynth-lite submodule
     $ git submodule update --init --recursive
@@ -193,8 +218,4 @@ directories.
 
 **[Official Blog](https://doom64ex.wordpress.com/)**
 
-**[Forum](http://z13.invisionfree.com/Doom64EX/index.php)** 
-
 **[Discord](https://discord.gg/AHd8t33)**
-
-You can join the official IRC channel `#doom64ex` on `irc.oftc.net` (OFTC).
