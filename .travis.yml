@@ -6,15 +6,15 @@ matrix:
   include:
     - os: linux
       compiler: gcc
-      env: GCC_VERSION=5
+      env: GCC_VERSION=10
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
             - kubuntu-backports
           packages:
-            - gcc-5
-            - g++-5
+            - gcc-10
+            - g++-10
             - cmake
             - libpng-dev
             - libgtest-dev
