@@ -54,6 +54,10 @@ target_link_libraries("${PROJECT_NAME}-gtk3"
 target_include_directories("${PROJECT_NAME}-gtk3" PUBLIC
   ${GTK3_INCLUDE_DIRS})
 
+# Reinaldo Deprera
+## harfbuzz bug linux
+target_include_directories("${PROJECT_NAME}-gtk3" PUBLIC /usr/include/harfbuzz)
+
 ##------------------------------------------------------------------------------
 ## Install target
 ##

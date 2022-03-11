@@ -34,6 +34,10 @@ option(ENABLE_SYSTEM_FLUIDSYNTH "Link with system-wide fluidsynth and not fluids
 option(ENABLE_GTK3 "Display windows using GTK+3" OFF)
 option(VERSION_DEV "Add git commit hash to window title" ON)
 
+# Evitando erro \
+# referência indefinida a símbolo "pthread_getspecific@@GLIBC_2.2.5"
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+
 # If fluidsynth-lite wasn't cloned, fall back to using system fluidsynth.
 if(NOT EXISTS "${CMAKE_SOURCE_DIR}/fluidsynth/CMakeLists.txt" AND NOT ENABLE_SYSTEM_FLUIDSYNTH)
   set(ENABLE_SYSTEM_FLUIDSYNTH ON)
@@ -127,6 +131,7 @@ if (NOT USE_CONAN)
   if(ENABLE_GTK3)
     find_package(GTK3 REQUIRED)
     find_package(Vala REQUIRED)
+
   endif(ENABLE_GTK3)
 endif(NOT USE_CONAN)
 
