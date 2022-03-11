@@ -42,12 +42,12 @@ Note: You may also need to install dynamic libraries separately.
 
 ### CMake options (-D parameter)
 
-| default | option/parameter | description |
-| ------- | ---------------- | ----------- |
-| ON | `ENABLE_TESTING` | *Compile unit tests* |
-| OFF | `ENABLE_SYSTEM_FLUIDSYNTH` | *Link with system-wide fluidsynth and not fluidsynth-lite* |
-| ON | `ENABLE_GTK3` | *Display windows using GTK+3* |
-| ON | `VERSION_DEV` | *Add git commit hash to window title* |
+| option/parameter | description | default |
+| ---------------- | ----------- | ------- |
+| `ENABLE_TESTING` | *Compile unit tests* | ON |
+| `ENABLE_SYSTEM_FLUIDSYNTH` | *Link with system-wide fluidsynth and not fluidsynth-lite* | OFF |
+| `ENABLE_GTK3` | *Display windows using GTK+3* | ON |
+| `VERSION_DEV` | *Add git commit hash to window title* | ON |
 
 ### CMake examples
 
