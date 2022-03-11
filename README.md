@@ -22,7 +22,7 @@ accepted, however.
 
 |                                                      | Ubuntu 14.04      | Fedora 24        | Arch Linux / [MSYS2*](http://www.msys2.org/) on Windows | [Homebrew](http://brew.sh/) on macOS        |
 |------------------------------------------------------|-------------------|------------------|---------------------------------------------------------|---------------------------------------------|
-| C++14 compiler                                       | g++-6             | gcc              | gcc                                                     | [Xcode](https://developer.apple.com/xcode/) |
+| C++14 compiler                                       | g++-10            | gcc              | gcc                                                     | [Xcode](https://developer.apple.com/xcode/) |
 | [CMake](https://cmake.org/download/)                 | cmake             | cmake            | cmake                                                   | cmake                                       |
 | [SDL2](http://libsdl.org/download-2.0.php)           | libsdl2-dev       | SDL2-devel       | sdl2                                                    | sdl2                                        |
 | [SDL2_net](https://www.libsdl.org/projects/SDL_net/) | libsdl2-net-dev   | SDL2_net-devel   | sdl2_net                                                | sdl2_net                                    |
