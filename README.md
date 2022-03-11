@@ -1,4 +1,4 @@
-Doom64EX [![Build Status](https://api.travis-ci.org/rdeprera/Doom64EX.svg?branch=master)](https://travis-ci.org/rdeprera/Doom64EX)
+Doom64EX [![Build Status](https://app.travis-ci.com/rdeprera/Doom64EX.svg?branch=master)](https://app.travis-ci.com/rdeprera/Doom64EX)
 ========
 
 Doom64EX is a reverse-engineering project aimed to recreate Doom64 as close as
@@ -22,7 +22,7 @@ accepted, however.
 
 |                                                      | Ubuntu 14.04      | Fedora 24        | Arch Linux / [MSYS2*](http://www.msys2.org/) on Windows | [Homebrew](http://brew.sh/) on macOS        |
 |------------------------------------------------------|-------------------|------------------|---------------------------------------------------------|---------------------------------------------|
-| C++14 compiler                                       | g++-6             | gcc              | gcc                                                     | [Xcode](https://developer.apple.com/xcode/) |
+| C++14 compiler                                       | g++-10            | gcc              | gcc                                                     | [Xcode](https://developer.apple.com/xcode/) |
 | [CMake](https://cmake.org/download/)                 | cmake             | cmake            | cmake                                                   | cmake                                       |
 | [SDL2](http://libsdl.org/download-2.0.php)           | libsdl2-dev       | SDL2-devel       | sdl2                                                    | sdl2                                        |
 | [SDL2_net](https://www.libsdl.org/projects/SDL_net/) | libsdl2-net-dev   | SDL2_net-devel   | sdl2_net                                                | sdl2_net                                    |
@@ -42,12 +42,12 @@ Note: You may also need to install dynamic libraries separately.
 
 ### CMake options (-D parameter)
 
-| default | option/parameter | description |
-| ------- | ---------------- | ----------- |
-| ON | `ENABLE_TESTING` | *Compile unit tests* |
-| OFF | `ENABLE_SYSTEM_FLUIDSYNTH` | *Link with system-wide fluidsynth and not fluidsynth-lite* |
-| ON | `ENABLE_GTK3` | *Display windows using GTK+3* |
-| ON | `VERSION_DEV` | *Add git commit hash to window title* |
+| option/parameter | description | default |
+| ---------------- | ----------- | ------- |
+| `ENABLE_TESTING` | *Compile unit tests* | ON |
+| `ENABLE_SYSTEM_FLUIDSYNTH` | *Link with system-wide fluidsynth and not fluidsynth-lite* | OFF |
+| `ENABLE_GTK3` | *Display windows using GTK+3* | ON |
+| `VERSION_DEV` | *Add git commit hash to window title* | ON |
 
 ### CMake examples
 
