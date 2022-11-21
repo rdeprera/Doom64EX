@@ -104,6 +104,8 @@ On Arch Linux:
     $ # Install dependencies
     $ sudo pacman -S git gcc cmake sdl2 sdl2_net zlib libpng
 
+> If you want FluidSynth (on Ubuntu or any other Debian Like distro, for example) you need `libfluidsynth-dev`: `sudo apt install libfluidsynth-dev`
+
 #### Clone and Build
 
 Find a suitable place to build the program and navigate there using `cd`.
